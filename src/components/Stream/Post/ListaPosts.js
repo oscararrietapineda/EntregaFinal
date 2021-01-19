@@ -1,7 +1,8 @@
 import React from 'react';
 import './Post.css';
-import {obtenerDatos} from '../Funciones/funciones';
 
+import {obtenerDatos} from '../Funciones/funciones';
+import Post from './Post';
 class ListaPosts extends React.Component {
     constructor(props) {
       super(props);
@@ -22,13 +23,13 @@ class ListaPosts extends React.Component {
 
     render() {
       console.log( this.state.usuario)
-      return (        
-        <ul>Post:<br/>
+      return (         
           {
           this.state.cargando ? 'Cargando ...' : ( this.state.Post == null ?
             'No se encontraron datos.' : (
           this.state.Post.map((usuario) => (
-            <li key={usuario.id}>{usuario.id} - {usuario.title}</li>
+            <Post  key={usuario.id} id = {usuario.id} Title= {usuario.title} /> 
+          
           ))))}
         </ul>
       );
