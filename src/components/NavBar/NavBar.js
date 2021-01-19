@@ -12,7 +12,9 @@ import UsuarioGet from '../Usuario/UsuarioGet';
 import Evaluaciones from '../Evaluaciones/Evaluaciones';
 import Formulario from "../Perfil/Formulario/Formulario";
 import Resultado from "../Perfil/NavPerfil/Resultado";
-// Se importa el "store"
+  
+import Post from '../Stream/Post/ListaPosts'  
+ 
 
 export default function NavBar() {
   return (
@@ -28,6 +30,9 @@ export default function NavBar() {
     </li>
     <li class="nav-item">
     <Link className="nav-link" to="/Pendientes">Pendientes</Link>
+    </li>
+    <li class="nav-item">
+    <Link className="nav-link" to="/Stream">Stream</Link>
     </li>
     
   </ul>
@@ -47,6 +52,9 @@ export default function NavBar() {
           </Route>
           <Route path="/Pendientes">
             <Pendientes />
+          </Route>
+          <Route path="/Stream">
+          <Post url='https://my-json-server.typicode.com/typicode/demo/posts'/>
           </Route>
           <Route path="/">
             <Inicio />
